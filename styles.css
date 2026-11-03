@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap');
+*{box-sizing:border-box}
+:root{--ink:#251d22;--plum:#38263e;--gold:#f5d77c;--paper:#fff0c9}
+body{margin:0;background:#28212a;color:var(--ink);font-family:Nunito,system-ui,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:18px}
+.game{width:min(1600px,100%);height:min(900px,calc(100vh - 36px));min-height:560px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:0;background:#312632;border:7px solid #17131a;border-radius:18px;overflow:hidden;box-shadow:0 24px 70px #0008}
+.seed-bank{position:relative;z-index:2;background:linear-gradient(90deg,#4a3a3b,#30252c);padding:18px 13px;border-right:5px solid #211b20;display:flex;flex-direction:column;gap:15px}
+.resource{height:82px;display:flex;align-items:center;justify-content:center;gap:12px;background:linear-gradient(#fff5d8,#dfc48b);border:4px solid #6b5140;border-radius:8px;box-shadow:inset 0 0 0 2px #fff9}
+.resource strong{font-size:34px;color:#30221e;text-shadow:1px 2px #fff}
+.ball-mark{width:38px;height:38px;border:3px solid #322a2a;border-radius:50%;background:linear-gradient(#e94e50 0 47%,#302a2a 47% 54%,#f8f3e8 54%);position:relative}
+.ball-mark:after{content:"";position:absolute;width:10px;height:10px;border:3px solid #302a2a;border-radius:50%;background:#fff;left:11px;top:11px}
+.seed-list{display:grid;gap:8px;align-content:start;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:2px 5px 8px 0;scrollbar-width:thin;scrollbar-color:#d9bd75 #40333a}.seed-list::-webkit-scrollbar{width:8px}.seed-list::-webkit-scrollbar-track{background:#40333a;border-radius:8px}.seed-list::-webkit-scrollbar-thumb{background:#d9bd75;border:2px solid #40333a;border-radius:8px}
+.seed{height:77px;width:100%;display:grid;grid-template-columns:58px 1fr auto;align-items:center;gap:5px;text-align:left;padding:5px 7px;border:3px solid #66564c;border-radius:7px;background:linear-gradient(110deg,#f9e8bd,#cdb58b);box-shadow:inset 0 0 0 2px #fff8;cursor:pointer;position:relative;overflow:hidden}
+.seed:hover{filter:brightness(1.08)}.seed.selected{border-color:#ffdf67;box-shadow:0 0 0 3px #ffdc5b66,inset 0 0 0 2px #fff8;background:linear-gradient(110deg,#fff5c9,#e4c68d)}
+.seed:disabled{filter:grayscale(.85);opacity:.58;cursor:not-allowed}
+.seed img{width:56px;height:60px;object-fit:contain;filter:drop-shadow(1px 2px 1px #493b32)}
+.seed .name{font-weight:900;font-size:12px;line-height:1.05}.seed .cost{font-size:12px;font-weight:900;color:#30221e;align-self:end;padding-bottom:4px}
+.seed .type{font-size:9px;color:#69574b;display:block;margin-top:4px}
+.bank-note{flex-shrink:0;margin-top:4px;color:#ead9bd;font-size:11px;line-height:1.45;text-align:center}
+.play-area{min-width:0;display:flex;flex-direction:column;background:#6a4935}
+.topline{height:60px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;background:linear-gradient(#614b64,#302438);border-bottom:4px solid #211922;color:#f7e6b9}
+.level-label{font-size:13px;font-weight:900;letter-spacing:2px;text-shadow:1px 2px #000}.top-buttons{display:flex;gap:8px}
+.top-buttons button{border:3px solid #241a2a;border-radius:8px;padding:7px 18px;background:linear-gradient(#75618a,#42324f);color:#72f13f;font-weight:1000;font-size:18px;text-shadow:2px 2px #17220d;cursor:pointer;box-shadow:inset 0 0 0 2px #ffffff24}
+.top-buttons button:hover{filter:brightness(1.2)}
+.yard-frame{flex:1;min-height:0;display:grid;grid-template-columns:165px minmax(0,1fr);background:#c9b58c;overflow:hidden}
+.house-edge{position:relative;background:linear-gradient(90deg,#9d866b,#dfc99e 55%,#a68c6b);border-right:9px solid #514336;overflow:hidden}
+.roof{position:absolute;top:0;left:-30px;width:240px;height:120px;background:repeating-linear-gradient(135deg,#a74325 0 17px,#6c2e26 18px 22px,#d16a3c 23px 27px);transform:skewY(-15deg);border-bottom:8px solid #523b32}
+.door{position:absolute;left:33px;top:190px;width:90px;height:185px;border:9px solid #6b4838;border-radius:55px 55px 8px 8px;background:linear-gradient(90deg,#92715e,#c39a79);box-shadow:inset 5px 0 #dfb999}
+.door:after{content:"";position:absolute;right:10px;top:88px;width:10px;height:10px;border-radius:50%;background:#32251f}
+.window{position:absolute;left:12px;top:420px;width:60px;height:85px;border:7px solid #634a37;background:linear-gradient(135deg,#9bd9ed,#e4f4e9);transform:rotate(-8deg)}
+.welcome{position:absolute;right:7px;top:385px;writing-mode:vertical-rl;background:#d7c18c;padding:9px 5px;border:3px solid #766044;font-size:10px;font-weight:1000;letter-spacing:2px}
+.mower{position:absolute;right:5px;top:150px;font-size:34px;color:#b52329;text-shadow:2px 2px #222;transform:rotate(-35deg)}.mower.second{top:52%;}.mower.third{top:auto;bottom:18px}
+.lawn-wrap{position:relative;min-width:0;min-height:0;background:#258b27}
+canvas{width:100%;height:100%;display:block;cursor:crosshair;touch-action:manipulation}
+.overlay{position:absolute;inset:0;display:grid;place-items:center;background:#14201499;backdrop-filter:blur(2px)}
+.overlay.hidden{display:none}.dialog{width:min(440px,90%);padding:28px 30px;text-align:center;background:linear-gradient(#fff4d8,#dfc28b);border:6px ridge #75563d;border-radius:12px;box-shadow:0 15px 40px #0008}
+.dialog-kicker{font-size:10px;letter-spacing:2px;font-weight:1000;color:#80513c}.dialog h1{font-size:34px;margin:8px 0;color:#3a2b2d;text-shadow:1px 2px #fff}.dialog h1 em{color:#a64b38}.dialog p{font-size:13px;line-height:1.5;color:#55433a}.dialog button{border:3px solid #5a3e2e;border-radius:7px;padding:11px 28px;background:linear-gradient(#8ee04d,#399b31);font-weight:1000;color:#173016;font-size:17px;cursor:pointer}
+footer{height:42px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;color:#f7e9c8;font-size:12px;font-weight:900;background:#463342;border-top:3px solid #251d26}
+@media(max-width:850px){body{padding:0}.game{height:100vh;min-height:0;border:0;border-radius:0;grid-template-columns:145px minmax(0,1fr)}.seed-bank{padding:10px 7px}.seed{height:65px;grid-template-columns:42px 1fr;}.seed img{width:42px;height:48px}.seed .cost{position:absolute;right:5px;bottom:0;font-size:10px}.seed .name{font-size:10px}.seed .type{font-size:8px}.yard-frame{grid-template-columns:65px minmax(0,1fr)}.door{left:5px;width:52px;height:125px;top:150px}.window{left:4px;width:45px;height:60px}.welcome{display:none}.mower{font-size:22px}.topline{padding:0 8px}.top-buttons button{font-size:12px;padding:6px 9px}.level-label{font-size:10px}.dialog h1{font-size:26px}}

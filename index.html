@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokémon vs Zombies</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game">
+    <aside class="seed-bank">
+      <div class="resource"><span class="ball-mark"></span><strong id="balls">50</strong></div>
+      <div class="seed-list" id="seedList"></div>
+      <div class="bank-note">Elegí un Pokémon y colocálo en el jardín.</div>
+    </aside>
+
+    <section class="play-area">
+      <header class="topline">
+        <div class="level-label">JARDÍN · NIVEL <b id="level">1</b></div>
+        <div class="top-buttons">
+          <button id="pause">Ⅱ PAUSA</button>
+          <button id="menu">MENÚ</button>
+        </div>
+      </header>
+      <div class="yard-frame">
+        <div class="house-edge" aria-hidden="true">
+          <div class="roof"></div><div class="door"></div><div class="window"></div>
+          <div class="welcome">BIENVENIDOS</div>
+          <div class="mower">✂</div>
+          <div class="mower second">✂</div>
+          <div class="mower third">✂</div>
+        </div>
+        <div class="lawn-wrap">
+          <canvas id="board" width="1350" height="760" aria-label="Jardín de juego"></canvas>
+          <div id="overlay" class="overlay">
+            <div class="dialog">
+              <div class="dialog-kicker">UNA AVENTURA DE OLI, LU Y MILE</div>
+              <h1 id="overlayTitle">Pokémon <em>vs</em> Zombies</h1>
+              <p id="overlayText">Defendé el jardín con tu equipo Pokémon. Recolectá Poké Balls, elegí tus compañeros y detené a los zombies.</p>
+              <button id="overlayAction">¡A jugar!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer><span id="status">Prepará tu equipo...</span><span>❤️ <b id="lives">5</b> vidas</span><span>Oleada <b id="wave">1</b></span></footer>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
